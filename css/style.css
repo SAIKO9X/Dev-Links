@@ -33,6 +33,7 @@ body {
 	/*background: (1° color) (2° image) (3° repeat) (4° position)/(5° size)*/
 	background: var(--bg-url) no-repeat top center/cover;
 	transition: all 1s;
+	height: 100vh;
 }
 
 /*========================= MAIN CONTAINER =========================*/
@@ -201,3 +202,15 @@ body {
 	font-weight: 500;
 	font-size: 14px;
 }
+
+/*========================= MEDIA QUERIES =========================*/
+
+@media (min-width: 700px) {
+	:root {
+		--bg-url: url(../assets/dark-desktop.jpg);
+	}
+
+	.light {
+		--bg-url: url(../assets/light-desktop.jpg);
+	}
+} ;
