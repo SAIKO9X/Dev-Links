@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+/*========================= CSS RESET =========================*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+:root {
+	--principal-color: white;
+	--bg-url: url(../assets/mobile-dark.jpg);
+	--stroke-color: rgba(255, 255, 255, 0.5);
+	--surface-color: rgba(255, 255, 255, 0.1);
+	--surface-color-hover: rgba(255, 255, 255, 0.2);
+	--bg-switch: url(../assets/moon-stars.svg);
+}
+
+/*========================= LIGHT MODE =========================*/
+
+.light {
+	--principal-color: black;
+	--bg-url: url(../assets/mobile-light.jpg);
+	--stroke-color: rgba(0, 0, 0, 0.5);
+	--surface-color: rgba(0, 0, 0, 0.05);
+	--surface-color-hover: rgba(0, 0, 0, 0.2);
+	--bg-switch: url(../assets/sun.svg);
+}
+
+body {
+	/*background: (1° color) (2° image) (3° repeat) (4° position)/(5° size)*/
+	background: var(--bg-url) no-repeat top center/cover;
+	transition: all 1s;
+}
+
+/*========================= MAIN CONTAINER =========================*/
+
+#container {
+	width: 360px;
+	margin: 56px auto 0px;
+	/*1° valor em cima, 2° direita, 3° em baixo, 4° esquerda*/
+}
+
+/*========================= PROFILE SECTION =========================*/
+
+#profile-section {
+	/*O text-align servira para alinhar todos os elementos que são inline*/
+	text-align: center;
+	padding: 24px;
+}
+
+#profile-section img {
+	width: 112px;
+	height: 112px;
+
+	object-fit: cover;
+	object-position: center;
+
+	border: 2px solid var(--principal-color);
+
+	margin-bottom: 10px;
+	border-radius: 50%;
+}
+
+#profile-section p {
+	color: var(--principal-color);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+/*========================= SWITCH BUTTON =========================*/
+#switch {
+	position: relative;
+	width: 64px;
+	margin: 4px auto;
+}
+
+#switch button {
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	left: 0;
+
+	width: 32px;
+	height: 32px;
+
+	border-radius: 50%;
+	border: 0;
+
+	background: white var(--bg-switch) no-repeat center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.light #switch button {
+	right: 0;
+	left: initial;
+}
+
+#switch span {
+	display: block;
+
+	width: 64px;
+	height: 24px;
+
+	background: var(--surface-color);
+	border: 1px solid var(--stroke-color);
+	border-radius: 10px;
+
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+
+/*========================= LINK LIST =========================*/
+
+#link-section {
+	display: flex;
+	flex-direction: column;
+
+	gap: 16px;
+
+	justify-content: center;
+	align-items: center;
+
+	padding: 24px;
+}
+
+.link-button {
+	width: 312px;
+	height: 50px;
+
+	background: var(--surface-color);
+	border: 1px solid var(--stroke-color);
+	border-radius: 8px;
+
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+
+	transition: all 0.25s;
+	cursor: pointer;
+}
+
+/*pseudo-selector*/
+.link-button:hover {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1.5px solid var(--principal-color);
+}
+
+.link-button a {
+	text-decoration: none;
+	color: var(--principal-color);
+	font-weight: 500;
+}
+
+/*========================= SOCIAL MEDIA =========================*/
+
+#social-links {
+	display: flex;
+	justify-content: center;
+	padding: 24px;
+}
+
+.icons {
+	color: var(--principal-color);
+	font-size: 24px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 16px;
+	border-radius: 50%;
+
+	transition: background 0.25s;
+}
+
+.icons:hover {
+	padding: 16px;
+	background: var(--surface-color-hover);
+}
+
+/*========================= FOOTER SECTION =========================*/
+
+#footer-section {
+	padding: 24px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: var(--principal-color);
+	font-weight: 500;
+	font-size: 14px;
+}
